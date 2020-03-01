@@ -1,0 +1,16 @@
+SELECT COUNT(*)
+FROM complete_cast AS cc,
+     comp_cast_type AS cct1,
+     comp_cast_type AS cct2,
+     cast_info AS ci,
+     aka_name AS an,
+     info_type AS it,
+     person_info AS pi
+WHERE cc.movie_id > -1 AND cct1.id > -1 AND an.person_id > -1 AND pi.person_id > -1
+
+  AND an.person_id = ci.person_id
+  AND ci.movie_id = cc.movie_id
+  AND cct2.id = cc.status_id
+  AND cct1.id = cc.subject_id
+  AND it.id = pi.info_type_id
+  AND pi.person_id = ci.person_id;

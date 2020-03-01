@@ -1,0 +1,14 @@
+# Hyper parameters that can be adjusted in COMPASS
+
+Variables:
+- CAT_SKETCH_BUCKETS (unsigned)
+- CAT_SKETCH_ROWS (unsigned)
+- PUSH_DOWN_MIN_TABLE_SIZE_SK (unsigned)
+- PUSH_DOWN_MAX_SELECTIVITY_SK (float)
+- PUSH_DOWN_MAX_SIZE (unsigned)
+- PRE_PROCESSING (false=0 true=1)
+- TOTAL_GPU_BLOCK_NBR (unsigned)
+- TOTAL_THREADS_PER_BLOCK (unsigned)
+
+Tuning variables:
+- number of traversal per node in join graph = 100

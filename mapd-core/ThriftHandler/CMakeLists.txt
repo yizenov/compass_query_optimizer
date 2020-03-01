@@ -1,0 +1,17 @@
+set(THRIFT_HANDLER_SOURCES MapDHandler.cpp TokenCompletionHints.cpp)
+set(THRIFT_HANDLER_LIBS mapd_thrift Shared ${Glog_LIBRARIES} ${CMAKE_DL_LIBS})
+
+if("${MAPD_EDITION_LOWER}" STREQUAL "ee")
+  list(APPEND THRIFT_HANDLER_LIBS rdkafka++)
+  include_directories("${CMAKE_CURRENT_SOURCE_DIR}/ee")
+  list(APPEND THRIFT_HANDLER_SOURCES ee/MapDRenderHandler.cpp ee/MapDDistributedHandler.cpp ee/HAHandler.cpp ee/KafkaMgr.cpp)
+elseif("${MAPD_EDITION_LOWER}" STREQUAL "ce")
+  include_directories("${CMAKE_CURRENT_SOURCE_DIR}/ee")
+  list(APPEND THRIFT_HANDLER_SOURCES ee/MapDRenderHandler.cpp ee/MapDDistributedHandler.cpp)
+else()
+  include_directories("${CMAKE_CURRENT_SOURCE_DIR}/os")
+endif()
+
+add_library(token_completion_hints TokenCompletionHints.cpp)
+add_library(thrift_handler ${THRIFT_HANDLER_SOURCES})
+target_link_libraries(thrift_handler token_completion_hints ${THRIFT_HANDLER_LIBS})

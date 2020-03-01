@@ -1,0 +1,12 @@
+SELECT COUNT(*)
+FROM cast_info AS ci,
+     role_type AS rt,
+     title AS t,
+     char_name AS chn,
+     name AS n
+WHERE ci.person_id > -1 AND rt.id > -1 AND chn.id > -1 AND n.id > -1
+
+  AND ci.movie_id = t.id
+  AND ci.role_id = rt.id
+  AND chn.id = ci.person_role_id
+  AND n.id = ci.person_id;

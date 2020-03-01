@@ -1,0 +1,99 @@
+select c_name,c_address from orders,lineitem,customer where o_orderkey=l_orderkey and o_totalprice=218611.01 and l_extendedprice=44283.96 and o_custkey=c_custkey;
+\fpd
+select c_name,c_address from orders,lineitem,customer where o_orderkey=l_orderkey and l_extendedprice=44283.96 and o_custkey=c_custkey;
+\fpd
+select c_name,c_address from orders,lineitem,customer where o_orderkey=l_orderkey and l_extendedprice=44283.96 and o_custkey=c_custkey;
+\fpd
+select c_name,c_address from orders,lineitem,customer where o_orderkey=l_orderkey and l_extendedprice=44283.96 and o_custkey=c_custkey;
+\fpd
+select c_name,c_address from orders,lineitem,customer where o_orderkey=l_orderkey and o_totalprice=218611.01 and o_custkey=c_custkey and c_acctbal=5745.09;
+\fpd
+select c_name,c_address from orders,lineitem,customer where o_orderkey=l_orderkey and o_totalprice=218611.01 and l_extendedprice=44283.96 and o_custkey=c_custkey and c_acctbal=5745.09;
+\fpd
+select c_name,c_address from orders,lineitem,customer where o_orderkey=l_orderkey and o_totalprice=218611.01 and l_extendedprice=44283.96 and o_custkey=c_custkey and c_acctbal=5745.09;
+\d
+\d orders
+\d lineitem;
+\d lineitem
+\d customer
+select c_name,c_address from orders,lineitem,customer where o_orderkey=l_orderkey and o_totalprice=DECIMAL(218611.01) and l_extendedprice=DECIMAL(44283.96) and o_custkey=c_custkey and c_acctbal=DECIMAL(5745.09);
+select c_name,c_address from orders,lineitem,customer where o_orderkey=l_orderkey and o_totalprice=218611.01 and l_extendedprice=44283.96 and o_custkey=c_custkey and c_acctbal=5745.09;
+\fpd
+select c_name,c_address from orders,lineitem,customer where o_orderkey=l_orderkey and o_totalprice=218611.01 and l_extendedprice=44283.96 and o_custkey=c_custkey;
+select c_name,c_address from orders,lineitem,customer where o_orderkey=l_orderkey and l_extendedprice=44283.96 and o_custkey=c_custkey;
+\fpd
+select c_name,c_address from orders,lineitem,customer where o_orderkey=l_orderkey and l_extendedprice=44283.96 and o_custkey=c_custkey;
+\fpd
+select count(*) from orders,lineitem,customer where o_orderkey=l_orderkey and l_extendedprice=44283.96 and o_custkey=c_custkey;
+\nofpd
+select c_name,c_address from orders,lineitem,customer where o_orderkey=l_orderkey and l_extendedprice=44283.96 and o_custkey=c_custkey;
+\fpd
+select count(*) from orders,lineitem,customer where o_orderkey=l_orderkey and l_extendedprice=44283.96 and o_custkey=c_custkey;
+\nofpd
+select count(*) from orders,lineitem,customer where o_orderkey=l_orderkey and l_extendedprice=44283.96 and o_custkey=c_custkey;
+select c_name,c_address from orders,lineitem,customer where o_orderkey=l_orderkey and o_totalprice=218611.01 and l_extendedprice=44283.96 and o_custkey=c_custkey and c_acctbal=5745.09;
+\fpd
+select count(*) from orders,lineitem,customer where o_orderkey=l_orderkey and o_totalprice=218611.01 and l_extendedprice=44283.96 and o_custkey=c_custkey and c_acctbal=5745.09;
+\nofpd
+select count(*) from orders,lineitem,customer where o_orderkey=l_orderkey and o_totalprice=218611.01 and l_extendedprice=44283.96 and o_custkey=c_custkey and c_acctbal=5745.09;
+\timing
+\nofpd
+select count(*) from orders,lineitem,customer where o_orderkey=l_orderkey and o_totalprice=218611.01 and l_extendedprice=44283.96 and o_custkey=c_custkey and c_acctbal=5745.09;
+\fpd
+select count(*) from orders,lineitem,customer where o_orderkey=l_orderkey and o_totalprice=218611.01 and l_extendedprice=44283.96 and o_custkey=c_custkey and c_acctbal=5745.09;
+select l_shipdate, o_orderdate from lineitem, orders where o_orderkey = l_orderkey where o_orderkey = 1;
+select l_shipdate, o_orderdate from lineitem, orders where o_orderkey = l_orderkey and o_orderkey = 1;
+\nofpd
+select count(*) from lineitem,orders,customer where l_orderkey=o_orderkey and l_shipdate=DATE '1996-03-13' and o_orderdate=DATE '1996-01-02' and o_custkey=c_custkey and c_acctbal=5745.09;
+\timing
+select count(*) from lineitem,orders,customer where l_orderkey=o_orderkey and l_shipdate=DATE '1996-03-13' and o_orderdate=DATE '1996-01-02' and o_custkey=c_custkey and c_acctbal=5745.09;
+\fpd
+select count(*) from lineitem,orders,customer where l_orderkey=o_orderkey and l_shipdate=DATE '1996-03-13' and o_orderdate=DATE '1996-01-02' and o_custkey=c_custkey and c_acctbal=5745.09;\
+\nofpd
+select count(*) from lineitem,orders,customer where l_orderkey=o_orderkey and l_shipdate=DATE '1996-03-13' and o_orderdate=DATE '1996-01-02' and o_custkey=c_custkey and c_acctbal=5745.09;\ ;
+select count(*) from lineitem,orders,customer where l_orderkey=o_orderkey and l_shipdate=DATE '1996-03-13' and o_orderdate=DATE '1996-01-02' and o_custkey=c_custkey and c_acctbal=5745.09;
+select l_shipdate, s_acctbal from lineitem, orders, supplier where o_orderkey = l_orderkey and l_suppkey = s_suppkey and o_orderstatus = 'F';
+select l_shipdate, s_acctbal from lineitem, orders, supplier where o_orderkey = l_orderkey and l_suppkey = s_suppkey and o_orderstatus = 'F' and o_orderkey = 1;
+select l_shipdate, s_acctbal from lineitem, orders, supplier where o_orderkey = l_orderkey and l_suppkey = s_suppkey and o_orderstatus = 'F' and o_orderkey < 10;
+\timing
+\nofpd
+select count(*) from orders,lineitem,supplier where o_orderkey=l_orderkey and o_orderstatus=’F’ and l_shipdate>DATE '1994-08-08' and l_suppkey=s_suppkey and s_acctbal=3215.4
+select count(*) from orders,lineitem,supplier where o_orderkey=l_orderkey and o_orderstatus=’F’ and l_shipdate>DATE '1994-08-08' and l_suppkey=s_suppkey and s_acctbal=3215.42;
+\timing
+select count(*) from orders,lineitem,supplier where o_orderkey=l_orderkey and o_orderstatus=’F’ and l_shipdate>DATE '1994-08-08' and l_suppkey=s_suppkey and s_acctbal=3215.42;
+select count(*) from orders,lineitem,supplier where o_orderkey=l_orderkey and o_orderstatus='F' and l_shipdate>DATE '1994-08-08' and l_suppkey=s_suppkey and s_acctbal=3215.42;
+\fpd
+select count(*) from orders,lineitem,supplier where o_orderkey=l_orderkey and o_orderstatus='F' and l_shipdate>DATE '1994-08-08' and l_suppkey=s_suppkey and s_acctbal=3215.42;
+\nofpd
+select l_shipdate, o_orderdate, ps_availqty from lineitem, orders, partsupp where o_orderkey = l_orderkey l_suppkey = ps_suppkey and o_orderkey < 10;
+select l_shipdate, o_orderdate, ps_availqty from lineitem, orders, partsupp where o_orderkey = l_orderkey and l_suppkey = ps_suppkey and o_orderkey < 10;
+select l_shipdate, o_orderdate, ps_availqty from lineitem, orders, partsupp where o_orderkey = l_orderkey and l_suppkey = ps_suppkey and o_orderdate = date '1992-01-01';
+\timing
+select count(*) from lineitem,orders,partsupp where l_shipdate > DATE '1992-01-15' and o_orderdate< DATE '1992-01-15' and l_orderkey=o_orderkey and l_suppkey=ps_suppkey and ps_availqty=5344;
+\fpd
+select count(*) from lineitem,orders,partsupp where l_shipdate > DATE '1992-01-15' and o_orderdate< DATE '1992-01-15' and l_orderkey=o_orderkey and l_suppkey=ps_suppkey and ps_availqty=5344;
+\cpu
+\timing
+select count(*) from orders,lineitem,customer where o_orderkey=l_orderkey and o_totalprice=218611.01 and l_extendedprice=44283.96 and o_custkey=c_custkey and c_acctbal=5745.09;
+\fpd
+select count(*) from orders,lineitem,customer where o_orderkey=l_orderkey and o_totalprice=218611.01 and l_extendedprice=44283.96 and o_custkey=c_custkey and c_acctbal=5745.09;
+select count(*) from lineitem,orders,customer where l_orderkey=o_orderkey and l_shipdate=DATE '1996-03-13' and o_orderdate=DATE '1996-01-02' and o_custkey=c_custkey and c_acctbal=5745.09;
+\nofpd
+select count(*) from lineitem,orders,customer where l_orderkey=o_orderkey and l_shipdate=DATE '1996-03-13' and o_orderdate=DATE '1996-01-02' and o_custkey=c_custkey and c_acctbal=5745.09;
+\fpd
+select count(*) from lineitem,orders,customer where l_orderkey=o_orderkey and l_shipdate=DATE '1996-03-13' and o_orderdate=DATE '1996-01-02' and o_custkey=c_custkey and c_acctbal=5745.09;
+select count(*) from lineitem where l_shipdate=DATE '1996-03-13';
+select count(*) from lineitem,orders,customer where l_orderkey=o_orderkey and l_shipdate=DATE '1996-03-13' and o_orderdate=DATE '1996-01-02' and o_custkey=c_custkey and c_acctbal=5745.09;
+\nofpd
+select count(*) from lineitem,orders,customer where l_orderkey=o_orderkey and l_shipdate=DATE '1996-03-13' and o_orderdate=DATE '1996-01-02' and o_custkey=c_custkey and c_acctbal=5745.09;
+select count(*) from orders where o_orderdate=DATE '1996-01-02';
+select count(*) from customer where c_acctbal=5745.09;
+\nofpd
+\cpu
+select count(*) from orders,lineitem,supplier where o_orderkey=l_orderkey and o_orderstatus='F' and l_shipdate>DATE '1994-08-08' and l_suppkey=s_suppkey and s_acctbal=3215.42;
+\fpd
+select count(*) from orders,lineitem,supplier where o_orderkey=l_orderkey and o_orderstatus='F' and l_shipdate>DATE '1994-08-08' and l_suppkey=s_suppkey and s_acctbal=3215.42;
+\nofpd
+select count(*) from lineitem,orders,partsupp where l_shipdate > DATE '1992-01-15' and o_orderdate< DATE '1992-01-15' and l_orderkey=o_orderkey and l_suppkey=ps_suppkey and ps_availqty=5344;
+\fpd
+select count(*) from lineitem,orders,partsupp where l_shipdate > DATE '1992-01-15' and o_orderdate< DATE '1992-01-15' and l_orderkey=o_orderkey and l_suppkey=ps_suppkey and ps_availqty=5344;

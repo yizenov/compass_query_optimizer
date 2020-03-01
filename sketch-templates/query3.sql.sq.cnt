@@ -1,0 +1,25 @@
+SELECT COUNT(*)
+FROM movie_companies AS mc, 
+     company_type AS ct,
+     info_type AS it,
+     movie_info_idx AS mi_idx,
+     company_name AS cn,
+     title AS t,
+     keyword AS k,
+     movie_keyword AS mk,
+     kind_type AS kt,
+     aka_title AS att,
+     movie_info AS mi
+WHERE mc.movie_id > -1 AND cn.id > -1 AND ct.id > -1 AND it.id > -1 AND mi_idx.movie_id > -1 AND k.id > -1 AND mk.movie_id > -1 AND kt.id > -1 AND t.id > -1 AND att.movie_id > -1 AND mi.movie_id > -1 
+
+  AND cn.id = mc.company_id
+  AND ct.id = mc.company_type_id
+  AND t.id = mi_idx.movie_id
+  AND mc.movie_id = mi_idx.movie_id
+  AND it.id = mi_idx.info_type_id
+  AND mk.keyword_id = k.id
+  AND mc.movie_id = mk.movie_id
+  AND kt.id = t.kind_id
+  AND t.id = att.movie_id
+  AND t.id = mi.movie_id
+  AND mi.info_type_id = it.id;

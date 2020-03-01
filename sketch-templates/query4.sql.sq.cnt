@@ -1,0 +1,10 @@
+SELECT COUNT(*)
+FROM link_type AS lt,
+     movie_link AS ml,
+     title AS t1,
+     title AS t2
+WHERE ml.movie_id > -1 AND lt.id > -1
+
+  AND ml.movie_id = t1.id
+  AND ml.linked_movie_id = t2.id
+  AND lt.id = ml.link_type_id;

@@ -1,0 +1,3 @@
+./bin/mapd_server --data /home/jun/.mapd/data --allow-loop-joins=1 --enable-watchdog=0
+./bin/mapdql mapd -u mapd -p HyperInteractive
+./bin/mapdql imdb -u mapd -p HyperInteractive
