@@ -64,7 +64,7 @@ Current implementation is only on GPU part of MapD system. However one can imple
     
 # Questions
 If you have questions, please contact:
-- Yesdaulet Izenov [yizenov@ucmerced.edu], (http://graduatestudent.ucmerced.edu/yizenov/)
+- Yesdaulet Izenov [yizenov@ucmerced.edu], (https://yizenov.github.io/yizenov/)
 - Asoke Datta [adatta2@ucmerced.edu]
 - Florin Rusu [frusu@ucmerced.edu], (https://faculty.ucmerced.edu/frusu/)
 
