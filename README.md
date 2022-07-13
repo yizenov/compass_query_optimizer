@@ -1,5 +1,8 @@
 # COMPASS: Online Sketch-based Query Optimization for In-Memory Databases
 
+# UPDATE: Reproducing results and figures
+Follow the detailed instructions from [instructions.pdf](https://github.com/yizenov/compass_optimizer/blob/master/instructions.pdf). </br>
+
 # Table of Contents
 - [Install MapD Database System](#installation)
 - [Create Database and Load Data](#load)
@@ -10,7 +13,7 @@
 
 # Experimental Setup
 COMPASS was developed in the following environment:
-- Machine: 2x Interl(R) Xeon(R) CPU E5-2660 v4 and NVIDIA Tesla K80
+- Machine: 2x Intel(R) Xeon(R) CPU E5-2660 v4 and NVIDIA Tesla K80
 - OS: Ubuntu 16.04 LTS
 - CUDA v10, Clang/LLVM
 
@@ -29,7 +32,7 @@ COMPASS is built as an extension on top of a clone of [MapD System](https://gith
 The number of threads is `56`. COMPASS has hyper parameters such as sketch size in `mapd-core/Catalog/COMPASS_init_variables.txt`. See `variables_details.txt` for more details about COMPASS hyper parameters.
 
 # 2. Create Database and Load Data
-All databases created by user are at `.mapd/data/`. Default user is `mapd`.
+All databases created by the user are at `.mapd/data/`. The default user is `mapd`.
     
 - Run server: `./bin/mapd_server --data ~/.mapd/data/`
 - Run client and create database called `imdb`:
@@ -40,16 +43,16 @@ All databases created by user are at `.mapd/data/`. Default user is `mapd`.
 - Run client and create schemas: `cat schematext.sql | ./bin/mapdql imdb -u mapd -p HyperInteractive`
 - Stop server `ctrl + c` on keyboard
 
-See `dataset/README.md` for more details about imdb schemas.
+See `dataset/README.md` for more details about IMDB schemas.
 
 # 3. Download IMDB Dataset
-The dataset that was used is [Internet Maovie Data Base (IMDB)](https://www.imdb.com/). The data is [publicly availabe](ftp://ftp.fu-berlin.de/pub/misc/movies/database/) in text files and [open-source imdbpy package](https://bitbucket.org/alberanid/imdbpy/get/5.0.zip) was used to tranform txt files to csv files in [1]. See for more details in [here](https://github.com/gregrahn/join-order-benchmark). The 3.6 DB snapshot is from May 2013 and it can be downloaded [here](homepages.cwi.nl/~boncz/job/imdb.tgz). The dataset includes 21 csv files i.e. 21 relations in total. It also includes queries to create the necessary relations written in schema.sql or schematext.sql files.
+The dataset that was used is [Internet Movie Data Base (IMDB)](https://www.imdb.com/). The data is [publicly availabe](ftp://ftp.fu-berlin.de/pub/misc/movies/database/) in text files and [open-source imdbpy package](https://bitbucket.org/alberanid/imdbpy/get/5.0.zip) was used to transform txt files to CSV files in [1]. See for more details in [here](https://github.com/gregrahn/join-order-benchmark). The 3.6 DB snapshot is from May 2013 and it can be downloaded [here](homepages.cwi.nl/~boncz/job/imdb.tgz). The dataset includes 21 CSV files i.e. 21 relations in total. It also includes queries to create the necessary relations written in schema.sql or schematext.sql files.
 
 # 4. Download Join Order Benchmark
 The workload that COMPASS's performance was evaluated based on [Join Order Benchmark(JOB)](http://www-db.in.tum.de/~leis/qo/job.tgz). JOB consists of 113 queries in total including 33 query families that each family queries differ only in selection predicates. See `queries/README.md` for more details about workload.
 
 # 5. Pre-build Sketch Templates
-In case of relations with no selection predicates, building the sketches can be avoided by using pre-built sketch templates. This is an additional optimization in order to keep the overhead low. See `sketch-templates/README.md` for more details about building templates. We already uploaded the prebuilt sketches for sketch sizes `73 x 1021` on `imdb` workload. However one need to re-create the templates in case of changing sketch sizes by running the queries in `sketch-templates`.
+In the case of relations with no selection predicates, building the sketches can be avoided by using pre-built sketch templates. This is an additional optimization in order to keep the overhead low. See `sketch-templates/README.md` for more details about building templates. We already uploaded the prebuilt sketches for sketch sizes `73 x 1021` on `imdb` workload. However one needs to re-create the templates in case of changing sketch sizes by running the queries in `sketch-templates`.
 
 # 6. Run Query
 Current implementation is only on GPU part of MapD system. However one can implement COMPASS on CPU mode. In order to run a query follow the instructions below:
