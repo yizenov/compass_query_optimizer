@@ -51,7 +51,7 @@ All databases created by the user are at `.mapd/data/`. The default user is `map
 See `dataset/README.md` for more details about IMDB schemas.
 
 ## 4. Download IMDB Dataset <a name="dataset"></a>
-The dataset that was used is [Internet Movie Data Base (IMDB)](https://www.imdb.com/). The data is [publicly availabe](ftp://ftp.fu-berlin.de/pub/misc/movies/database/) in text files and [open-source imdbpy package](https://bitbucket.org/alberanid/imdbpy/get/5.0.zip) was used to transform txt files to CSV files in [1]. See for more details in [here](https://github.com/gregrahn/join-order-benchmark). The 3.6 DB snapshot is from May 2013 and it can be downloaded [here](homepages.cwi.nl/~boncz/job/imdb.tgz). The dataset includes 21 CSV files i.e. 21 relations in total. It also includes queries to create the necessary relations written in schema.sql or schematext.sql files.
+The dataset that was used is [Internet Movie Data Base (IMDB)](https://www.imdb.com/). The data is [publicly availabe](ftp://ftp.fu-berlin.de/pub/misc/movies/database/) in text files and [open-source imdbpy package](https://bitbucket.org/alberanid/imdbpy/get/5.0.zip) was used to transform txt files to CSV files in [[1]](#1). See for more details in [here](https://github.com/gregrahn/join-order-benchmark). The 3.6 DB snapshot is from May 2013 and it can be downloaded [here](homepages.cwi.nl/~boncz/job/imdb.tgz). The dataset includes 21 CSV files i.e. 21 relations in total. It also includes queries to create the necessary relations written in schema.sql or schematext.sql files.
 
 ## 5. Download Join Order Benchmark <a name="benchmark"></a>
 The workload that COMPASS's performance was evaluated based on [Join Order Benchmark(JOB)](http://www-db.in.tum.de/~leis/qo/job.tgz). JOB consists of 113 queries in total including 33 query families that each family queries differ only in selection predicates. See `queries/README.md` for more details about workload.
@@ -80,8 +80,8 @@ If you have questions, please contact:
 This work is supported by [NSF award (number 2008815)](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2008815&HistoricalAwards=false) and by [the U.S. Department of Energy Early Career Award (DOE Career)](http://ascr-discovery.science.doe.gov/2014/08/leaping-to-exascale/).
 
 ## 10. References <a name="references"></a>
-1.  [Query optimization through the looking glass, and what we found running the Join Order Benchmark](https://doi.org/10.1007/s00778-017-0480-7)
-2.  [Filter Push-Down extension for MapD](https://github.com/junhyungshin/mapd-core-fpd)
+<a id="1">[1]</a> [Query optimization through the looking glass, and what we found running the Join Order Benchmark](https://doi.org/10.1007/s00778-017-0480-7)</br>
+<a id="2">[2]</a> [Filter Push-Down extension for MapD](https://github.com/junhyungshin/mapd-core-fpd)</br>
 
 ## 11. Citation <a name="citation"></a>
 ```bibtex
