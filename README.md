@@ -77,3 +77,12 @@ This work is supported by [NSF award (number 2008815)](https://www.nsf.gov/award
 # Links:
 1.  [Query optimization through the looking glass, and what we found running the Join Order Benchmark](https://doi.org/10.1007/s00778-017-0480-7)
 2.  [Filter Push-Down extension for MapD](https://github.com/junhyungshin/mapd-core-fpd)
+
+# Citation:
+```bibtex
+@misc{compass-github,
+  author = {Yesdaulet Izenov},
+  title = "{The COMPASS Query Optimizer}",
+  howpublished = "\url{https://github.com/yizenov/compass_query_optimizer}"
+}
+```
