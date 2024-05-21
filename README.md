@@ -1,7 +1,7 @@
 # COMPASS: Online Sketch-based Query Optimization for In-Memory Databases
 
 # UPDATE: Reproducing results and figures
-Follow the detailed instructions from [instructions.pdf](https://github.com/yizenov/compass_optimizer/blob/master/instructions.pdf). </br>
+Follow the detailed instructions from [instructions.pdf](https://dl.acm.org/action/downloadSupplement?doi=10.1145%2F3448016.3452840&file=3448016.3452840_readme.pdf). </br>
 
 ## Table of Contents
 1. [Experimental Setup](#setup)
